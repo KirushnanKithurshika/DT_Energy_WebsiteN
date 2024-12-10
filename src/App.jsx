@@ -13,7 +13,7 @@ import Partners from './components/Partners/partners';
 
 function App() {
   return (
-    <BrowserRouter basename="/DT_Energy_WebsiteN">
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={<Homepage/>} />
         <Route path='/product' element={<Product />} />
