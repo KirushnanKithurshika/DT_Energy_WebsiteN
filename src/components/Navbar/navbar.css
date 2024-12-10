@@ -1,0 +1,518 @@
+/* Grid Layout for Responsive Design */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar-container {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar-grid {
+  background-color: white;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  padding-inline: 10px;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+  grid-template-areas: "logo number email";
+}
+
+.logo-image {
+  grid-area: logo;
+  height: 60px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 50px;
+  margin-right: 8px;
+}
+
+
+.navbar-contactnumber {
+  grid-area: number;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  color: #7a197b;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+.icon-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #7a197b;
+  position: relative;
+  z-index: 2;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(107, 33, 168, 0.3);
+  border-radius: 50%;
+  animation: wave-animation 1.5s infinite ease-out;
+  z-index: 1;
+}
+
+
+
+
+@keyframes wave-animation {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Style the phone number text */
+.phone-number {
+  display: flex;
+  align-items: center;
+}
+
+/* Email section - display it only on larger screens */
+.navbar-contactemail {
+  grid-area: email;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  color: #5d0c66;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.navsubbar {
+  margin-top: 30px;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+
+
+.navbar-links {
+  margin-top: 40px;
+  display: flex;
+  justify-content: end;
+  margin-right: 200px;
+  gap: 100px;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.navbar-links a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+
+.navbar-links .active {
+  color: #ffffff;  
+  font-weight: bold;
+}
+
+.navbar-links .active::after {
+  width: 100%;  
+}
+
+
+@media (max-width: 1200px) {
+  .logo-image {
+    height: 60px;
+  }
+
+  .navbar-links {
+    gap: 60px;
+    margin-right: 0px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    color: #ffffff;
+  }
+
+  .navbar-links a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-contactnumber {
+    font-size: 16px;
+
+  }
+
+  .icon-container {
+    width: 35px;
+
+    height: 35px;
+  }
+
+  .icon {
+    font-size: 16px;
+
+  }
+
+  .phone-number {
+    font-size: 16px;
+
+  }
+
+  .navbar-contactemail {
+    font-size: 16px;
+
+  }
+}
+@media (max-width: 1000px) {
+  .logo-image {
+    height: 60px;
+  }
+
+  .navbar-links {
+    gap: 60px;
+    margin-right: 0px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+  .navbar-links a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-contactnumber {
+    font-size: 16px;
+
+  }
+
+  .icon-container {
+    width: 35px;
+
+    height: 35px;
+  }
+
+  .icon {
+    font-size: 16px;
+
+  }
+
+  .phone-number {
+    font-size: 16px;
+
+  }
+
+  .navbar-contactemail {
+    font-size: 16px;
+
+  }
+}
+
+.navbar-humburger {
+  display: none;
+
+}
+
+
+
+@media (max-width: 900px) {
+
+  .logo-image {
+    height: 50px;
+  }
+
+  .navbar-humburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-contactnumber {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-contactnumber span {
+    display: none;
+
+  }
+
+
+  .navbar-contactemail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-contactemail span {
+    display: none;
+    /* Hide email text */
+  }
+
+  /* Icon sizes */
+  .icon-container {
+    width: 60px;
+    height: 60px;
+    
+  }
+
+  .icon {
+    font-size: 16px;
+    /* Icon size adjustment */
+  }
+
+  .navbar-grid {
+    margin-right: 0px;
+    padding:0px;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    grid-template-areas: "logo number email humburger";
+
+  }
+
+  .navbar-links {
+
+    display: none;
+  }
+
+
+
+  .navbar-links a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #696569;
+    transition: width 0.3s ease;
+  }
+
+  .navbar-links a:hover::after {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .logo-image {
+    height: 50px;
+  }
+
+  .navbar-humburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-contactnumber {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-contactnumber span {
+    display: none;
+
+  }
+
+
+  .navbar-contactemail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-contactemail span {
+    display: none;
+    /* Hide email text */
+  }
+
+  /* Icon sizes */
+  .icon-container {
+    width: 50px;
+    height: 50px;
+
+    
+  }
+
+  .icon {
+    font-size: 16px;
+    /* Icon size adjustment */
+  }
+
+  .navbar-grid {
+    margin-right: 0px;
+    padding:0px;
+    display: grid;
+    grid-template-columns:8fr 1fr 1fr 1fr;
+    grid-template-areas: "logo number email humburger";
+
+  }
+  .navbar-grid {
+   
+    padding: 0px;
+    padding-inline:0px;
+    display: grid;
+    gap: 6px;
+   
+  }
+  .navbar-links {
+
+    display: none;
+  }
+
+
+
+  .navbar-links a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #696569;
+    transition: width 0.3s ease;
+  }
+
+  .navbar-links a:hover::after {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 420px) {
+
+  /* Adjust logo size */
+  .logo-image {
+    height: 35px;
+    margin-left: 20px;
+    margin-right: 8px;
+  
+  }
+
+  
+  .navbar-contactnumber {
+    font-size: 14px;
+    gap: 10px;
+
+  }
+
+ 
+  .icon-container {
+    width: 30px;
+    height: 30px;
+  }
+
+  .icon {
+    font-size: 16px;
+    /* Smaller icons */
+  }
+
+  /* Adjust navbar links */
+  .navbar-links {
+    font-size: 14px;
+    /* Smaller font size */
+    gap: 30px;
+    /* Reduced gap */
+  }
+
+  .navbar-links a {
+    font-size: 14px;
+    /* Smaller font for links */
+  }
+
+  /* Modify the hamburger menu appearance */
+  .navbar-humburger {
+    display: flex;
+    /* Ensure hamburger is visible */
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Modify navbar grid layout for very small screens */
+  .navbar-grid {
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    grid-template-areas: "logo number email humburger";
+    background-color: white;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    padding-inline: 10px;
+    border-radius: 50px;
+    display: grid;
+    gap: 2px;
+    align-items: center;
+    grid-template-areas: "logo number email";
+  }
+
+}
+
+
+

@@ -1,0 +1,44 @@
+.project-buttons {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .project-buttons button {
+    background-color: #811473;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .project-buttons button:hover {
+    background-color: #6a0a42;
+  }
+  
+  .project-buttons button.active {
+    background-color: #4c0832; 
+    }
+  
+
+  @media (max-width: 768px) {
+    
+    
+    .project-buttons {
+      flex-direction: row; 
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+  
+    .project-buttons button {
+      width:10%; 
+    }
+  }
+  

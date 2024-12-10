@@ -1,0 +1,497 @@
+
+
+.Getaquote-container {
+  
+    position: relative;
+    background-image: url('../../assets/getaquoteBG.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    margin: 100px;
+    border-radius: 15px;
+}
+
+.getaquote-content {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: rgba(152, 150, 150, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "left right";
+    gap: 20px;
+}
+
+.left {
+   bottom:20px;
+    grid-area: left;
+    display: grid;
+    grid-template-rows: 0.15fr 1fr;
+    grid-template-areas:
+        "up"
+        "down";
+    width: 100%;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.up {
+    grid-area: up;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.down {
+    padding-inline: 30px;
+    grid-area: down;
+    background-color: transparent;
+    display: grid;
+    grid-template-rows: 0.3fr 0.2fr auto; 
+    grid-template-areas: 
+        "row1"
+        "row2"
+        "row3"; 
+    justify-content: center;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 16px;
+    color: rgb(160, 160, 161);
+}
+
+
+
+
+.headgetaquote {
+    text-align: start;
+    font-size: 28px;
+    font-weight: 600;
+    color:rgb(15, 68, 114);
+}
+
+.Aspan{
+    grid-area: row1;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    font-size: 16px;
+   
+    color: rgb(154, 154, 158); 
+    font-family: 'inter', sans-serif; 
+}
+.Bspan{
+    grid-area: row2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:left; 
+    font-style: italic; 
+    font-size: 16px;
+    color: rgb(35, 85, 138); 
+    font-family: 'inter', serif; 
+}
+
+.Cspan{
+    font-weight: 500;
+    grid-area:row3;
+    font-size: 16px;
+    color:rgb(149, 147, 147);
+    line-height: 1.8;
+   
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-start; 
+    padding-inline: 60px; 
+  }
+  
+  .transparent-form {
+    margin-top: 40px;
+    width:100%;
+    border-radius: 8px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .transparent-form .form-groupA {
+    margin-bottom: 10px;
+  }
+  
+  .transparent-form label {
+    color: rgb(233, 229, 229);
+    font-size: 14px;
+    margin-bottom: 5px;
+   
+  }
+  
+  .transparent-form input,
+.transparent-form textarea {
+    width: 100%;
+    color: rgb(255, 255, 255); 
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255); 
+    font-size: 14px;
+    outline: none; 
+    transition: border-color 0.3s ease; 
+}
+
+
+.transparent-form input:focus,
+.transparent-form textarea:focus {
+    border-bottom: 3px solid #fff; 
+   
+}
+  .transparent-form textarea {
+    resize: none; 
+  }
+  
+  .transparent-form button {
+    width: 60%;
+    padding: 8px 10px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 15px; 
+    border: 2px solid white; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 30px auto; 
+}
+
+  
+  .transparent-form button:hover {
+    border: 2px solid #1c1414;
+    background-color: #111010;
+    color:white;
+  }
+
+
+  /* Add this to your CSS */
+.form-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #800e62; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 1000;
+    opacity: 1;
+    animation: fadeOut 4s forwards; /* Animate fading out after 3 seconds */
+
+
+}
+  
+  .form-message.error {
+    background-color: #f44336; /* Red for error */
+  }
+  
+  /* Optional: Button style for disabled state */
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 1500px) and (min-width: 1024px) {
+    .headgetaquote {
+        font-size:24px; 
+    }
+  
+    .left {
+        grid-area: left;
+        display: grid;
+        grid-template-rows: 0.2fr 1fr;}
+    
+    .right {
+        justify-content: center; 
+        padding-inline: 20px; 
+    }
+
+    .transparent-form {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .transparent-form label {
+        font-size: 12px; 
+    }
+
+    .transparent-form input,
+    .transparent-form textarea {
+        font-size: 12px;
+    }
+
+    .transparent-form button {
+        width: 100%; 
+        padding: 12px;
+        font-size: 18px; 
+    }
+    .Getaquote-container {
+        height: 80vh;
+        margin: 30px;
+        border-radius: 20px;
+    }
+
+    .form-message {
+       
+        font-size: 14px;
+        
+    
+    }
+      
+
+}
+@media (max-width: 1024px) and (min-width:768px){
+    .headgetaquote {
+        font-size:24px; margin-top: 40px;
+    }
+    .left {
+        grid-area: left;
+        display: grid;
+        grid-template-rows: 0.15fr 1fr;
+        grid-template-areas:
+            "up"
+            "down";
+        width: 100%;
+        border-radius: 15px;
+        background-color: white;
+    }
+    .right {
+        justify-content: center; 
+        padding-inline: 20px; 
+    }
+
+    .transparent-form {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .transparent-form label {
+        font-size: 14px; 
+    }
+
+    .transparent-form input,
+    .transparent-form textarea {
+        font-size: 14px; 
+    }
+.Aspan{
+  display:none;
+    
+}
+.Bspan{
+    
+    display:none;
+}
+    .transparent-form button {
+        width: 100%; 
+        padding: 8px 10px ;
+        font-size: 15px; 
+    }
+    .Getaquote-container {
+        height: 80vh;
+        margin: 30px;
+        border-radius: 20px;
+    }
+    .form-message {
+       
+        font-size: 14px;
+        
+    
+    
+    }
+      
+   
+
+}
+
+
+
+
+@media (max-width: 768px) {
+    .transparent-form .form-group {
+        margin-bottom: 15px;
+      }
+
+    .getaquote-content {
+        grid-template-columns: 1fr; /* Change to 1 column */
+        grid-template-areas: 
+            "left"
+            "right"; /* Stack left and right sections */
+    }
+    
+    .headgetaquote {
+        margin:0;
+        margin-top: 20px;
+        font-size:24px; /* Smaller font size for smaller screens */
+        color:white;
+    }
+  .Aspan{
+    display:none;
+  }
+ 
+  .left {
+    background: transparent;
+    grid-area: left;
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+
+    .transparent-form {
+        width:100%;
+        margin-top: 0px;
+        padding: 40px;
+    }
+
+    .transparent-form label {
+        font-size: 14px; 
+    }
+
+    .transparent-form input,
+    .transparent-form textarea {
+        font-size: 16px; 
+    }
+
+    .transparent-form button {
+        width: 60%; 
+        padding: 8px 12px;
+        font-size: 14px; 
+    }
+    .Getaquote-container {
+        height: 90vh;
+        margin: 30px;
+        border-radius: 20px;
+    }
+    .right{
+        margin: 0;
+        padding:2px;
+    }
+    .Aspan{
+        display:none;
+
+    }
+    .Bspan{
+        color:rgb(255, 255, 255);
+        margin-top:30px;
+    }
+    .Cspan{
+        display:none;
+    }
+
+    .form-message {
+       
+        font-size: 12px;
+        
+    
+    
+    }
+      
+}
+
+@media (max-width: 480px) and (min-width:360px){
+    .getaquote-content {
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+            "left"
+            "right"; 
+    }
+    .transparent-form .form-group {
+        margin-bottom: 10px;
+      }
+    .headgetaquote {
+        margin-top:20px;
+        margin-bottom: 0px;
+        font-size:20px; 
+        color:white;
+    }
+  .Aspan{
+    display:none;
+  }
+ 
+  .left {
+    background: transparent;
+    grid-area: left;
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+
+    .transparent-form {
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    .transparent-form label {
+        font-size: 14px; 
+    }
+
+    .transparent-form input,
+    .transparent-form textarea {
+        width:90%;
+        padding:10px;
+        font-size: 12px; 
+    }
+
+    .transparent-form button {
+        margin-top: 1px;
+        width: 80%; 
+        padding: 8px;
+        font-size: 14px; 
+    }
+    .Getaquote-container {
+        height: 90vh;
+        margin: 20px;
+        border-radius: 20px;
+    }
+    .right{
+        margin: 0;
+        padding:2px;
+    }
+    .Aspan{
+        display:none;
+
+    }
+    .Bspan{
+        color:rgb(255, 255, 255);
+        font-size:14px;
+        margin-top: 0px;
+    }
+    .Cspan{
+        display:none;
+    }
+
+    .getaquote-content {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;}
+
+        .Getaquote-container {
+            margin:30px;
+        }
+
+        .form-message {
+       
+            font-size: 12px;
+            
+        
+        
+        }
+          
+
+    }

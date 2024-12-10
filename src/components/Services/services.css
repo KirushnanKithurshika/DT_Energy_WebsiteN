@@ -1,0 +1,268 @@
+.solutions-container {
+    margin-top: 100px;
+    display: grid;
+    grid-template-rows: auto 1fr; /* Two rows: header and content */
+    grid-template-areas:
+      "head"
+      "service";
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 100px;
+  }
+  .solution-description{
+    font-size: 14px;
+    color:white;
+  }
+  .title {
+    grid-area: head;
+    color:  #811473;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 100px;
+ 
+  }
+  .solution-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+  }
+  .solution-card:hover .solution-title {
+    opacity: 0; /* Hides the title on hover */
+  }
+  .solutions-grid {
+    justify-content: center; /* Centers the grid container itself horizontally */
+  
+  justify-items: center;
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 2 columns */
+    gap: 60px;
+  }
+  
+  .solution-card {
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .solution-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  .solution-card:hover .solution-image {
+    transform: scale(1.1); /* Zooms the image by 10% on hover */
+  }
+  .solution-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    text-align: center; /* Centers text inside the overlay */
+  }
+  
+  .solution-card:hover .solution-overlay {
+    opacity: 1; /* Show overlay on hover */
+  }
+  
+  .solution-text-button {
+    font-size: 18px;
+    font-weight: bold;
+    background-color:   #811473;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .solution-text-button:hover {
+    background-color: #6a4c8c; /* Lighter shade on hover */
+  }
+
+  @media (max-width: 1750px) {
+    .solutions-grid {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+    .solutions-grid {
+       margin-top: 10px;
+        margin:100px;
+       
+      }
+      .solutions-container {
+        margin-top: 80px;
+       
+      }
+      .title {
+       
+        margin-bottom: 50px;
+     
+      }
+  }
+  @media (max-width: 1024px) {
+    .solutions-grid {
+      grid-template-columns: repeat(2, 1fr); 
+    
+    }
+    .solutions-grid {
+       
+        margin:20px;
+       
+      }
+      .solutions-container {
+        margin-top: 60px;
+       
+      }
+      .solution-description{
+        font-size: 14px;
+      }
+      .title {
+       font-size: 28px;
+        margin-bottom: 40px;
+     
+      }
+      .solution-title {
+        font-size: 16px;
+        
+      }
+
+      .solution-text-button {
+        font-size: 15px;
+        font-weight: bold;
+        background-color:   #811473;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: background-color 0.3s ease;
+      }
+  }
+  
+  @media (max-width: 768px) {
+    .solutions-grid {
+      grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+
+
+    .solution-text-button {
+        font-size:15px;
+        font-weight: bold;
+        background-color: #7a197b;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      .solution-description{
+        font-size: 14px;
+      }
+
+      .solution-title{
+        font-size: 16px;
+      }
+      .solutions-grid {
+       
+        margin:40px;
+       
+      }
+
+      .solutions-container {
+        margin-top: 30px;
+        margin-bottom: 30px;
+       
+      }
+
+      .title{
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 50px;
+       
+      
+      }
+  }
+  
+  @media (max-width: 450px) {
+    .solutions-grid {
+      grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+
+
+    .solution-text-button {
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #7a197b;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      .solution-description{
+        font-size: 14px;
+      }
+
+      .title{
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+      .solution-title{
+        font-size: 15px;
+      }
+
+      .solutions-grid {
+       
+        margin:10px;
+       
+      }
+
+      .solutions-container {
+        margin-top: 0px;
+       
+      }
+  }
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+  

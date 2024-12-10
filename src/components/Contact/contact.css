@@ -1,0 +1,488 @@
+.contact-container {
+  margin-top: 60px;
+  background-image: url('../../assets/FooterBG.png');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr;
+  grid-template-rows: 4fr 2fr 0.4fr;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.contact-heading {
+  display: grid;
+  grid-column: 1;
+  grid-row: 2;
+  color: #fff;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.contact-details {
+  grid-column: 1/2;
+  grid-row: 2;
+  display: grid;
+  align-items: center;
+  margin-left: 30px;
+  gap: 10px;
+  color: #fff;
+  padding: 20px;
+}
+
+.white-logocontainer {
+  grid-column: 3;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.white-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.white-logo img {
+  max-width: 80%;
+  object-fit: contain;
+}
+
+.icon-container {
+  flex-shrink: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+
+}
+
+.icon-container:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  gap: 10px;
+
+}
+
+.icon-container img {
+  transition: all 0.3s ease;
+}
+
+.icon-container:hover img {
+  filter: brightness(1.3);
+}
+
+.icon-container img {
+  width: 30px;
+}
+
+strong {
+  margin-right: 20px;
+}
+
+.contact-detailP {
+  font-size: 16px;
+  color: #fff;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+.middle-content {
+  grid-column: 1 / 4;
+  grid-row: 3;
+  padding: 20px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-top: 2px solid white;
+  font-size: 16px;
+  text-align: center;
+}
+
+.middle-content p {
+  margin: 0;
+}
+
+.Authorized-container {
+  margin-left: 30px;
+  grid-column: 1;
+  font-size: 28px;
+  color: white;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 40px;
+  padding: 20px;
+}
+
+.authorized-logos {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  align-items: center;
+}
+
+.authorized-logos img {
+  max-width: 100px;
+  height: auto;
+}
+
+.authorized-logos {
+  display: flex;
+  gap: 30px;
+}
+
+.fbwhatsappweb {
+
+  grid-column: 2;
+  grid-row: 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+}
+
+.fbwhatsappweb img {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+
+.container {
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2/3;
+  grid-row: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  height: 100%;
+}
+
+h2 {
+  color: #009abf;
+  font-size: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+p {
+  color: rgb(75, 67, 67);
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  background-color: #0f4b6e;
+  color: rgb(253, 253, 253);
+  font-weight: bold;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.cta-button:hover {
+  background-color: #009abf;
+}
+
+.rights {
+  color: rgb(187, 184, 184);
+  text-align: center;
+  font-size: 16px;
+}
+
+@media (max-width: 1500px) {
+  .Authorized-container {
+    font-size: 20px;
+
+  }
+
+  .authorized-logos img {
+    max-width: 80px;
+  }
+
+  .contact-heading {
+    font-size: 24px;
+  }
+
+  .contact-detailP {
+    font-size: 16px;
+  }
+
+  .white-logo img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .contact-container {
+    height: 120vh;
+    background-size: cover;
+    background-position: bottom left;
+    overflow:scroll;
+  }
+
+  h2 {
+
+    font-size: 26px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  p {
+    color: rgb(245, 241, 241);
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+
+  .cta-button {
+    background-color: #e3e313;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .container {
+    justify-content: end;
+  }
+
+
+}
+
+@media (max-width: 1200px) {
+  .contact-container {
+    height:fit-content;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+ 
+
+  }
+
+  .rights {
+    color: rgb(187, 184, 184);
+    text-align: center;
+    font-size: 14px;
+  }
+  .Authorized-container{
+    margin-left: 10px;
+  }
+  .contact-heading,
+  .contact-details,
+  .white-logocontainer,
+  .middle-content,
+  .Authorized-container,
+  .authorized-logos,
+  .fbwhatsappweb,
+  .container {
+    grid-column: 1;
+    /* All content spans across 1 column */
+    grid-row: auto;
+    /* Rows automatically adjust */
+  }
+
+  /* Adjust font sizes and layout for better readability */
+  .contact-heading {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .contact-detailP {
+    font-size: 14px;
+  }
+
+  .white-logo img {
+
+    width: 30%;
+
+  }
+
+  .contact-details {
+    margin: 0px;
+  }
+
+  .container {
+    justify-content: flex-start;
+    /* Adjust container layout */
+    padding: 0 40px;
+  }
+
+  h2 {
+    font-size: 22px;
+    color: #e7f9fe;
+    margin-bottom: 20px;
+
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .cta-button {
+    color: rgb(33, 11, 11);
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 05px 10px;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .cta-button:hover {
+    color: white;
+    background-color: #000000;
+  }
+
+  .contact-heading {
+    font-size: 24px;
+  }
+
+  .white-logocontainer {
+    padding: 0px;
+  }
+}
+
+@media (max-width: 420px) {
+  .contact-container {
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    /* 1 column on small screens */
+    grid-template-rows: auto;
+    /* Automatically adjust rows */
+    gap: 15px;
+    /* Optional: Adjust the gap between elements for small screens */
+  }
+
+  .contact-heading,
+  .contact-details,
+  .white-logocontainer,
+  .middle-content,
+  .Authorized-container,
+  .authorized-logos,
+  .fbwhatsappweb,
+  .container {
+    grid-column: 1;
+    /* All content spans across 1 column */
+    grid-row: auto;
+    /* Rows automatically adjust */
+  }
+
+  /* Adjust font sizes and layout for better readability */
+  .contact-heading {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+
+  .contact-detailP {
+    font-size: 14px;
+  }
+
+  .contact-details {
+    margin: 0px;
+  }
+
+  .container {
+    justify-content: flex-start;
+    /* Adjust container layout */
+    padding: 0 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+    color: #e7f9fe;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 12px;
+    margin-bottom: 30px;
+  }
+
+  .cta-button {
+    color: rgb(33, 11, 11);
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 12px;
+    padding: 8px 14px;
+    margin-bottom: 0px;
+  }
+
+
+  .authorized-logos img {
+    max-width: 80px;
+  }
+
+  .icon-container {
+    width: 40px;
+    height: 40px;
+
+  }
+  .white-logocontainer {
+    padding: 0px;
+  }
+
+  .rights {
+    color: rgb(187, 184, 184);
+    text-align: center;
+    font-size: 12px;
+  }
+}

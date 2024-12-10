@@ -1,0 +1,446 @@
+.solarinstallation-container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+   
+   
+   
+}
+
+.solarinstallation-head {
+    margin:0px 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: bold;
+    color: #156181;
+    text-align: justify;
+    padding: 40px;
+    
+}
+
+.solarinstallation-section {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+.solarinstallation-image img {
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+
+.solarinstallation-description {
+
+    display: block;
+    font-size: 16px;
+    text-align: justify;
+    color: rgb(90, 91, 92);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.solarinstallation-heading {
+   padding-left: 20px;
+    text-align: left;
+    font-size: 28px;
+    font-weight: bold;
+    color: #7e0870;
+    margin-bottom: 20px;
+}
+
+.solar-services-intro {
+    line-height: 1.6;
+    font-size: 18px;
+    text-align: justify;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #292828;
+}
+
+.solar-services-heading {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #7e0870;
+}
+
+.solar-services-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.solar-service-item {
+    line-height: 1.6;
+    font-size: 16px;
+    color: #2a2828;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+
+
+.service-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #671111;
+}
+
+
+.client-need {
+  
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: bold;
+    color: #767677;
+    text-align: justify;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.client-need li {
+    margin-bottom: 10px; 
+    font-size: 16px; 
+    color: #7e0870; 
+    list-style-type: disc; 
+    margin-left: 20px; 
+}
+
+.client-need li:last-child {
+    margin-bottom: 0;
+}
+
+.highlight {
+    font-weight: bold; 
+    color: #f8220a; /* Change color to make it stand out */
+}
+.ongrid-offgrid {
+    align-items: center;
+  justify-items: center;
+    display: grid;
+   grid-template-columns: 1fr;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.onoff-grids {
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.onoff-grids img {
+    width: 800px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.onoff-grids img:hover {
+    transform: scale(1.05);
+}
+
+.onoff-text {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #c5951d;
+    font-size: 24px;
+}
+
+
+@media screen and (max-width: 1500px) {
+    .solar-services-intro {
+        font-size: 16px;
+        text-align: justify;
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #292828;
+    }
+
+    .solarinstallation-section {
+        grid-template-columns: 1fr;
+        /* One column for smaller screens */
+        grid-template-rows: auto;
+        gap: 20px;
+        justify-items: center;
+        /* Center items horizontally */
+    }
+
+    .solarinstallation-description {
+        font-size: 16px;
+        text-align: justify;
+        padding: 10px;
+    }
+
+    .solarinstallation-head {
+        font-size: 16px;
+        padding: 10px;
+    }
+    .client-need {
+        font-size: 16px;}
+    .solarinstallation-image img {
+        width: 500px;
+        height: auto;
+        border-radius: 8px;
+        /* Optional: adds rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Optional: adds a subtle shadow */
+    }
+
+    .service-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #671111;
+    }
+
+    .solar-service-item {
+        font-size: 16px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .onoff-grids img {
+        width: 600px;
+        height: auto;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+    }
+    
+    .onoff-grids img:hover {
+        transform: scale(1.05);
+    }
+    
+    .onoff-text {
+        margin-top: 50px;
+        font-weight: bold;
+        color: #c5951d;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .solarinstallation-section {
+        grid-template-columns: 1fr;
+        /* One column for smaller screens */
+        grid-template-rows: auto;
+        gap: 20px;
+        justify-items: center;
+        /* Center items horizontally */
+    }
+
+    .solarinstallation-description {
+        font-size: 16px;
+        text-align: justify;
+        padding: 10px;
+    }
+
+    .solarinstallation-head {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .solar-services-intro {
+        font-size: 14px;
+
+    }
+
+    .client-need {
+       
+        font-size: 18px;
+       
+    }
+    
+    .client-need li {
+       
+        font-size: 20px; 
+        
+    }
+
+    .service-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #671111;
+    }
+
+    .solar-service-item {
+        font-size: 14px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .solarinstallation-image img {
+        width: 500px;
+        height: auto;
+        border-radius: 8px;
+        /* Optional: adds rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Optional: adds a subtle shadow */
+    }
+
+    .solarinstallation-heading {
+        font-size: 28px;
+    }
+
+    .onoff-grids img {
+        width: 500px;
+        
+    }
+    
+   
+    
+    .onoff-text {
+        margin-top: 50px;
+        font-weight: bold;
+        color: #c5951d;
+        font-size: 28px;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .solarinstallation-container {
+        margin-top: 10px;}
+        .solarinstallation-section {
+            grid-template-columns: 1fr;
+            /* One column for smaller screens */
+            grid-template-rows: auto;
+            gap: 20px;
+            justify-items: center;
+            /* Center items horizontally */
+        }
+    
+        .solarinstallation-description {
+            font-size: 14px;
+            /* Adjust font size for readability */
+            text-align: justify;
+            /* Center-align text for better appearance */
+            padding: 10px;
+        }
+    
+        .solarinstallation-head {
+            font-size: 14px;
+            padding: 20px;
+        }
+    
+        .solar-services-intro {
+            font-size: 14px;
+    
+        }
+    
+        .service-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #671111;
+        }
+        
+        .solar-service-item {
+            font-size: 14px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .solarinstallation-image img {
+            width: 400px;
+            height: auto;
+            border-radius: 8px;
+          
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            
+        }
+    
+        .solarinstallation-heading {
+            font-size: 22px;
+        }
+    
+        .client-need {
+      
+            font-size: 14px;
+            padding: 20px;
+           
+        }
+        
+        .client-need li {
+           
+            font-size: 14px; 
+            
+        }
+    
+        .onoff-grids img {
+            width: 400px;
+            
+        }
+        
+       
+        
+        .onoff-text {
+            margin-top: 50px;
+            font-weight: bold;
+            color: #c5951d;
+            font-size: 22px;
+        }
+    }
+    
+@media screen and (max-width: 420px) {
+
+    .solarinstallation-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .solarinstallation-head {
+        font-size: 14px;
+        text-align: justify;
+        padding: 20px;
+    }
+
+    .solar-services-intro {
+        font-size: 14px;
+
+    }
+
+    .client-need {
+  
+        font-size: 14px;
+        padding: 20px;
+       
+    }
+    
+    .client-need li {
+       
+        font-size: 14px; 
+        
+    }
+
+    .onoff-grids img {
+        width: 320px;
+        
+    }
+    .solarinstallation-image img {
+        width: 320px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        
+    }
+
+   
+    
+    .onoff-text {
+        margin-top: 50px;
+        font-weight: bold;
+        color: #c5951d;
+        font-size: 22px;
+    }
+    .solarinstallation-heading {
+        font-size: 20px;
+    }
+}
+
