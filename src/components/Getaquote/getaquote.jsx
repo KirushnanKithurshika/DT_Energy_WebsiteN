@@ -1,57 +1,85 @@
-import React, { useEffect, useState } from 'react';
-import './getaquote.css';
-import 'aos/dist/aos.css';
-import AOS from 'aos';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import "./getaquote.css";
+import "aos/dist/aos.css";
+import AOS from "aos";
+import axios from "axios";
 
 function Getaquote() {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    address: '',
-    email: '',
-    message: '',
+    name: "",
+    phone: "",
+    address: "",
+    email: "",
+    message: "",
   });
-  const [message, setMessage] = useState('');  // State for success/error message
-  const [isSubmitting, setIsSubmitting] = useState(false); // To handle submit button state
 
-  // Initialize AOS (Animate On Scroll) for animations
+  const [message, setMessage] = useState(""); // success/error/status message
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Initialize AOS
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
-      easing: 'ease-in-out',
+      easing: "ease-in-out",
     });
   }, []);
 
-  // Handle form input changes and update state
+  // Clear message after 5 seconds
+  useEffect(() => {
+    if (!message) return;
+    const t = setTimeout(() => setMessage(""), 5000);
+    return () => clearTimeout(t);
+  }, [message]);
+
+  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submission
+  // Handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setIsSubmitting(true);
-    setMessage('');  // Reset previous message before new submission attempt
+    setMessage("Sending your request...");
 
     try {
-      const response = await axios.post('https://dt-backend-2257.onrender.com/send-quote', formData);
-      setMessage('Your quote request has been successfully sent!');  // Success message
+      const response = await axios.post(
+        "https://dt-backend-2257.onrender.com/send-quote",
+        formData,
+        {
+          timeout: 60000, // 60 seconds (Render can be slow on cold start)
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      // Show backend response message if present
+      const okMsg =
+        response?.data?.message || "Your quote request has been successfully sent!";
+      setMessage(okMsg);
+
+      // Reset form
       setFormData({
-        name: '',
-        phone: '',
-        address: '',
-        email: '',
-        message: '',
-      });  
-      setTimeout(() => setMessage(''), 5000);
+        name: "",
+        phone: "",
+        address: "",
+        email: "",
+        message: "",
+      });
     } catch (error) {
-      console.error('Error sending email:', error);
-      setMessage('There was an issue sending your request. Please try again.');  // Error message
+      console.error("Error sending email:", error);
+
+      // Show real error message from backend if available
+      const serverMsg =
+        error?.response?.data?.message ||
+        error?.message ||
+        "There was an issue sending your request. Please try again.";
+
+      setMessage(serverMsg);
     } finally {
-      setIsSubmitting(false);  // Re-enable submit button
+      setIsSubmitting(false);
     }
   };
 
@@ -62,12 +90,16 @@ function Getaquote() {
           <div className="up">
             <span className="headgetaquote">Get a Quote</span>
           </div>
+
           <div className="down">
             <span className="Aspan">
-              Fill out the form below, and our friendly team will reach out to you within 24 hours to guide you every step of the way!
+              Fill out the form below, and our friendly team will reach out to
+              you within 24 hours to guide you every step of the way!
               <br />
             </span>
+
             <span className="Bspan">Got questions? We're here to help. 💬</span>
+
             <span className="Cspan">
               🎁 <strong>Why wait?</strong> Completing the form gives you access to:
               <br />
@@ -97,6 +129,7 @@ function Getaquote() {
                 required
               />
             </div>
+
             <div className="form-groupA">
               <label htmlFor="phone">Phone Number</label>
               <input
@@ -108,6 +141,7 @@ function Getaquote() {
                 required
               />
             </div>
+
             <div className="form-groupA">
               <label htmlFor="address">Address</label>
               <input
@@ -119,6 +153,7 @@ function Getaquote() {
                 required
               />
             </div>
+
             <div className="form-groupA">
               <label htmlFor="email">Email</label>
               <input
@@ -127,8 +162,10 @@ function Getaquote() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                // optional
               />
             </div>
+
             <div className="form-groupA">
               <label htmlFor="message">Message</label>
               <textarea
@@ -138,14 +175,18 @@ function Getaquote() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-              ></textarea>
+              />
             </div>
-            <button type="submit" disabled={isSubmitting}>Get a Quote</button>
-           </form>
+
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Sending..." : "Get a Quote"}
+            </button>
+          </form>
         </div>
       </div>
+
+      {/* ✅ Message output */}
       {message && <div className="form-message">{message}</div>}
-          
     </div>
   );
 }

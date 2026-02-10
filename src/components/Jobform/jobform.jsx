@@ -1,111 +1,151 @@
-import React, { useState, useRef, useEffect } from 'react';
-import './jobform.css';
-import { FaPaperPlane } from 'react-icons/fa';
+import React, { useState, useRef, useEffect } from "react";
+import "./jobform.css";
+import { FaPaperPlane } from "react-icons/fa";
 
 function JobApplyForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
+    name: "",
+    phone: "",
+    email: "",
     preferredContactMethod: [],
     resume: null,
     coverLetter: null,
-    position: '',
-    availability: '',
+    position: "",
+    availability: "",
   });
 
-  const [responseMessage, setResponseMessage] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false); // New state for tracking submission
+  const [responseMessage, setResponseMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Refs for file inputs to reset their state
+  // Refs to clear file inputs
   const resumeInputRef = useRef(null);
   const coverLetterInputRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked, files } = e.target;
-    if (type === 'checkbox') {
-      if (checked) {
-        setFormData({ ...formData, [name]: [...formData[name], value] });
-      } else {
-        setFormData({
-          ...formData,
-          [name]: formData[name].filter((item) => item !== value),
-        });
-      }
-    } else if (type === 'file') {
-      setFormData({ ...formData, [name]: files[0] });
-    } else {
-      setFormData({ ...formData, [name]: value });
+
+    if (type === "checkbox") {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: checked
+          ? [...prev[name], value]
+          : prev[name].filter((item) => item !== value),
+      }));
+      return;
+    }
+
+    if (type === "file") {
+      setFormData((prev) => ({ ...prev, [name]: files?.[0] || null }));
+      return;
+    }
+
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Helper: fetch with timeout
+  const fetchWithTimeout = async (url, options, timeoutMs = 60000) => {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeoutMs);
+
+    try {
+      const res = await fetch(url, { ...options, signal: controller.signal });
+      return res;
+    } finally {
+      clearTimeout(id);
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setResponseMessage(''); // Clear any previous messages
-    setIsSubmitting(true);  // Set isSubmitting to true when submitting
 
-    // Prepare the form data
+    setResponseMessage("Sending your application...");
+    setIsSubmitting(true);
+
+    // Prepare multipart form data
     const data = new FormData();
-    data.append('name', formData.name);
-    data.append('phone', formData.phone);
-    data.append('email', formData.email);
-    data.append('position', formData.position);
-    data.append('availability', formData.availability);
-    data.append('resume', formData.resume);
-    data.append('coverLetter', formData.coverLetter);
+    data.append("name", formData.name);
+    data.append("phone", formData.phone);
+    data.append("email", formData.email);
+    data.append("position", formData.position);
+    data.append("availability", formData.availability);
+
+    // Only append files if present (prevents backend crashes)
+    if (formData.resume) data.append("resume", formData.resume);
+    if (formData.coverLetter) data.append("coverLetter", formData.coverLetter);
+
     data.append(
-      'preferredContactMethod',
+      "preferredContactMethod",
       JSON.stringify(formData.preferredContactMethod)
     );
 
     try {
-      const response = await fetch('https://dt-backend-2257.onrender.com/send-job-application', {
-        method: 'POST',
-        body: data,
-      });
+      const response = await fetchWithTimeout(
+        "https://dt-backend-2257.onrender.com/send-job-application",
+        {
+          method: "POST",
+          body: data,
+        },
+        60000 // 60s timeout (Render cold starts)
+      );
 
-      const result = await response.json();
+      // Read response safely (even if server sends non-JSON)
+      const text = await response.text();
+      let result;
+      try {
+        result = JSON.parse(text);
+      } catch {
+        result = { message: text || "Unexpected response from server" };
+      }
+
       if (response.ok) {
-        setResponseMessage('Application submitted successfully!');
+        setResponseMessage(
+          result.message || "Application submitted successfully!"
+        );
 
-        // Reset the form data
+        // Reset form
         setFormData({
-          name: '',
-          phone: '',
-          email: '',
+          name: "",
+          phone: "",
+          email: "",
           preferredContactMethod: [],
           resume: null,
           coverLetter: null,
-          position: '',
-          availability: '',
+          position: "",
+          availability: "",
         });
 
         // Clear file inputs
-        if (resumeInputRef.current) resumeInputRef.current.value = '';
-        if (coverLetterInputRef.current) coverLetterInputRef.current.value = '';
+        if (resumeInputRef.current) resumeInputRef.current.value = "";
+        if (coverLetterInputRef.current) coverLetterInputRef.current.value = "";
       } else {
-        setResponseMessage(result.message || 'Error submitting application');
+        setResponseMessage(result.message || "Error submitting application");
       }
-      
     } catch (error) {
-      console.error('Error:', error);
-      setResponseMessage('Error submitting application');
+      console.error("Error:", error);
+
+      if (error.name === "AbortError") {
+        setResponseMessage(
+          "Server is taking too long to respond (cold start). Please try again in a moment."
+        );
+      } else {
+        setResponseMessage("Error submitting application. Please try again.");
+      }
     } finally {
-      setIsSubmitting(false); // Set isSubmitting to false after the response
+      setIsSubmitting(false);
     }
   };
 
-  // Clear response message after 5 seconds
+  // Clear message after 5 seconds
   useEffect(() => {
-    if (responseMessage) {
-      const timeout = setTimeout(() => setResponseMessage(''), 5000); // Clear message after 5 seconds
-      return () => clearTimeout(timeout); // Cleanup timeout on component unmount
-    }
+    if (!responseMessage) return;
+    const timeout = setTimeout(() => setResponseMessage(""), 5000);
+    return () => clearTimeout(timeout);
   }, [responseMessage]);
 
   return (
     <div className="job-apply-form-container">
       <h2 className="form-header">Job Apply</h2>
+
       <form onSubmit={handleSubmit} className="job-apply-form">
         <div className="form-group">
           <label htmlFor="name">Name</label>
@@ -151,7 +191,7 @@ function JobApplyForm() {
                 type="checkbox"
                 name="preferredContactMethod"
                 value="Phone"
-                checked={formData.preferredContactMethod.includes('Phone')}
+                checked={formData.preferredContactMethod.includes("Phone")}
                 onChange={handleChange}
               />
               Phone
@@ -161,7 +201,7 @@ function JobApplyForm() {
                 type="checkbox"
                 name="preferredContactMethod"
                 value="Email"
-                checked={formData.preferredContactMethod.includes('Email')}
+                checked={formData.preferredContactMethod.includes("Email")}
                 onChange={handleChange}
               />
               Email
@@ -217,7 +257,7 @@ function JobApplyForm() {
         </div>
 
         <button type="submit" className="submit-btn" disabled={isSubmitting}>
-          <FaPaperPlane /> Submit
+          <FaPaperPlane /> {isSubmitting ? "Sending..." : "Submit"}
         </button>
       </form>
 
