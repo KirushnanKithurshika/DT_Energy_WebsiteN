@@ -49,11 +49,11 @@ const Navbar = () => {
 
         <div className="navbar-contactemail">
           <div className='icon-container'>
-            <a href='mailto:dreamtrillions100@gmail.com'>
+            <a href='mailto:contact@dtenergy.lk'>
           <FaEnvelope className="icon" />
           </a>
           </div>
-          <span>dreamtrillions100@gmail.com</span>
+          <span>contact@dtenergy.lk</span>
         </div>
 
         <div className="navbar-humburger" onClick={toggleMenu}><div className='icon-container'>
