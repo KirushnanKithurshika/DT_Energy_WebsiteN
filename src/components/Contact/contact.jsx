@@ -53,7 +53,7 @@ function Contact() {
             </span>
             <strong>Email:</strong>
             <span className="detail-text">
-              <a href="mailto:dreamtrillions100@gmail.com">dreamtrillions100@gmail.com</a>
+              <a href="mailto:contact@dtenergy.com">contact@dtenergy.com</a>
             </span>
           </div>
         </div>
@@ -65,7 +65,7 @@ function Contact() {
         <button
   className="cta-button"
   onClick={() => {
-    window.location.href = "mailto:dreamtrillions100@gmail.com?subject=Partnership&body=I am interested in a partnership.";
+    window.location.href = "mailto:contact@dtenergy.com?subject=Partnership&body=I am interested in a partnership.";
   }}
 >
   Get Started
@@ -100,7 +100,7 @@ function Contact() {
       </div>
 
       <div className="middle-content">
-        <p className="rights">@2024-2025.Dream Trillions(Pvt)Ltd. All Rights Reserved.</p>
+        <p className="rights">@2024-2026.Dream Trillions(Pvt)Ltd. All Rights Reserved.</p>
       </div>
     </div>
   );
