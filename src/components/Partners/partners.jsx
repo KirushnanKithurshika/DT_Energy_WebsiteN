@@ -10,6 +10,7 @@ import logo6 from '../../assets/panasonic.jpg';
 import logo7 from '../../assets/foxess.png';
 import logo8 from '../../assets/Energynet.png';
 import logo9 from '../../assets/huawei.png';
+import logo10 from '../../assets/midealogo.png';
 import AOS from 'aos'; 
 import 'aos/dist/aos.css'; 
 
@@ -69,6 +70,9 @@ function Partners() {
             </div>
             <div className="grid-box" data-aos="zoom-in" data-aos-delay="1300">
               <img src={logo9} alt="Logo 9" />
+            </div>
+            <div className="grid-box" data-aos="zoom-in" data-aos-delay="1300">
+              <img src={logo10} alt="Logo 9" />
             </div>
           </div>
           
