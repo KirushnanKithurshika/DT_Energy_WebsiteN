@@ -17,7 +17,7 @@ import 'aos/dist/aos.css';  // Import AOS CSS
 
 function Solarinstallation() {
     useEffect(() => {
-        AOS.init({ duration: 1000 }); // Initialize AOS
+        AOS.init({ duration: 1002 }); // Initialize AOS
     }, []);
     return (
         <div className='solarinstallation-container'>
