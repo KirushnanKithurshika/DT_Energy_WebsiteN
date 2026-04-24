@@ -20,7 +20,7 @@ function Product() {
       </div>
       <div className='Productheadsubhead'>
       <div className='Product'>Products</div>
-      <div className='product-subheading'>We offer quality solar panels, inverters, and batteries for reliable and sustainable energy solutions.</div>
+      <div className='product-subheading'>We offer quality solar panels, inverters, batteries, Air conditioner,Solar lights and etc for reliable and sustainable energy solutions.</div>
     </div>
     </div>
     <Products/>

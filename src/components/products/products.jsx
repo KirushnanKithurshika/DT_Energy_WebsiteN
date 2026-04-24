@@ -4,6 +4,10 @@ import solar from '../../assets/solar.png';
 import inverter from '../../assets/inverter.png';
 import battery from '../../assets/battery.png';
 import Productsmall from '../products/productsmall';
+import ac from '../../assets/mideaAC.jpg';
+import solarlight from '../../assets/Solarlights.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 function Products() {
@@ -90,6 +94,36 @@ function Products() {
                             we go beyond solar panels and inverters to provide comprehensive energy solutions, including premium battery systems that ensure uninterrupted power and efficient energy storage. We proudly offer battery solutions from globally trusted brands such as Panasonic, Energynet, and SF Sonic, each known for their advanced technology, reliability, and exceptional performance. Panasonic batteries are synonymous with innovation and longevity, offering outstanding energy density and stability, making them ideal for both residential and commercial applications. Energynet delivers cutting-edge battery solutions designed to maximize storage efficiency and provide reliable backup power during outages. SF Sonic, a renowned name in the energy storage sector, offers robust and durable batteries capable of handling varying energy demands with ease. With these high-quality battery solutions, DT Energy empowers homes and businesses to achieve energy independence, optimize energy usage, and reduce reliance on the grid. Our battery systems are tailored to meet diverse needs, ensuring seamless integration with solar installations for a complete and sustainable energy solution. At DT Energy, we are committed to delivering reliable, efficient, and future-ready energy storage solutions that support a greener, more resilient tomorrow.
                             </div>
                         </div>
+                        <div className='classG' data-aos="fade-up">
+                                            <img
+                                                src={ac}
+                                                alt="Solar AC"
+                                                className="products-image"
+                                                ref={(el) => (imageRefs.current[3] = el)}
+                                            />
+                                        </div>
+                        
+                                        <div className='classH' data-aos="fade-up">
+                                            <div className='classtexts'>
+                                                We offer energy-efficient solar-compatible air conditioning solutions from trusted brands like Midea. These air conditioners are designed to reduce electricity consumption while delivering powerful cooling performance. Ideal for both residential and commercial use, solar AC systems help lower energy costs and provide sustainable comfort throughout the year.
+                                            </div>
+                                        </div>
+                        
+                                        {/* Solar Lights */}
+                                        <div className='classI' data-aos="fade-up">
+                                            <img
+                                                src={solarlight}
+                                                alt="Solar Lights"
+                                                className="products-image"
+                                                ref={(el) => (imageRefs.current[4] = el)}
+                                            />
+                                        </div>
+                        
+                                        <div className='classJ' data-aos="fade-up">
+                                            <div className='classtexts'>
+                                                Our solar lighting solutions are perfect for outdoor and indoor applications, offering reliable illumination using clean energy. These lights are designed for durability, low maintenance, and high efficiency, making them ideal for homes, streets, gardens, and commercial spaces. Solar lights help reduce electricity bills while enhancing safety and visibility.
+                                            </div>
+                                        </div>
                     </div>
                 </>
             )}

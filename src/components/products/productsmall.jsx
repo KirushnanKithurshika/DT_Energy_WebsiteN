@@ -3,8 +3,8 @@ import './productsmall.css';
 import solar from '../../assets/solar.png';
 import inverter from '../../assets/inverter.png';
 import battery from '../../assets/battery.png';
-import ac from '../../assets/mideaAC.png';
-import solarlight from '../../assets/Solarlights.png';
+import ac from '../../assets/mideaAC.jpg';
+import solarlight from '../../assets/Solarlights.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -43,7 +43,7 @@ function Productsmall() {
     return (
         <div className='products-description-container'>
             <div className='products-head' data-aos="fade-up" >
-                We provide top-notch products and services in the solar energy sector, specializing in solar panels, inverters, and batteries. Our solutions are designed to deliver reliable, sustainable, and efficient energy systems, empowering homes and businesses with clean energy alternatives.
+                We provide top-notch products and services in the solar energy sector, specializing in solar panels, inverters, batteries, Air conditioner,Solar lights and etc. Our solutions are designed to deliver reliable, sustainable, and efficient energy systems, empowering homes and businesses with clean energy alternatives.
             </div>
             <div className='products-details'>
                 <div className='classA' data-aos="fade-up" >
