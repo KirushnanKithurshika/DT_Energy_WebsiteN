@@ -47,13 +47,13 @@ function Contact() {
 
           <div className="contact-detailP">
             <span className="icon-container">
-              <a href="mailto:dreamtrillions100@gmail.com">
+              <a href="mailto:contact@dtenergy.lk">
                 <img src={emailL} alt="Email Icon" />
               </a>
             </span>
             <strong>Email:</strong>
             <span className="detail-text">
-              <a href="mailto:contact@dtenergy.com">contact@dtenergy.com</a>
+              <a href="mailto:contact@dtenergy.lk">contact@dtenergy.lk</a>
             </span>
           </div>
         </div>
@@ -65,7 +65,7 @@ function Contact() {
         <button
   className="cta-button"
   onClick={() => {
-    window.location.href = "mailto:contact@dtenergy.com?subject=Partnership&body=I am interested in a partnership.";
+    window.location.href = "mailto:contact@dtenergy.lk?subject=Partnership&body=I am interested in a partnership.";
   }}
 >
   Get Started

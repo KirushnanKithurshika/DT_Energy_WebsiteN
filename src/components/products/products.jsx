@@ -104,7 +104,7 @@ function Products() {
                                         </div>
                         
                                         <div className='classH' data-aos="fade-up">
-                                            <div className='classtexts'>
+                                            <div className='classtext'>
                                                 We offer energy-efficient solar-compatible air conditioning solutions from trusted brands like Midea. These air conditioners are designed to reduce electricity consumption while delivering powerful cooling performance. Ideal for both residential and commercial use, solar AC systems help lower energy costs and provide sustainable comfort throughout the year.
                                             </div>
                                         </div>
@@ -120,7 +120,7 @@ function Products() {
                                         </div>
                         
                                         <div className='classJ' data-aos="fade-up">
-                                            <div className='classtexts'>
+                                            <div className='classtext'>
                                                 Our solar lighting solutions are perfect for outdoor and indoor applications, offering reliable illumination using clean energy. These lights are designed for durability, low maintenance, and high efficiency, making them ideal for homes, streets, gardens, and commercial spaces. Solar lights help reduce electricity bills while enhancing safety and visibility.
                                             </div>
                                         </div>
