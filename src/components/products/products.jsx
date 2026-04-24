@@ -47,7 +47,7 @@ function Products() {
             ) : (
                 <>
                     <div className='product-head'  data-aos="fade-up">
-                        We provide top-notch products and services in the solar energy sector, specializing in solar panels, inverters, and batteries. Our solutions are designed to deliver reliable, sustainable, and efficient energy systems, empowering homes and businesses with clean energy alternatives.
+                        We provide top-notch products and services in the solar energy sector, specializing in solar panels, inverters, batteries, Air conditioner,Solar lights and etc. Our solutions are designed to deliver reliable, sustainable, and efficient energy systems, empowering homes and businesses with clean energy alternatives.
                     </div>
                     <div className='product-details'>
                         <div className='classA' data-aos="fade-up">

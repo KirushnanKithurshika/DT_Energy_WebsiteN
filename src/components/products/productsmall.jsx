@@ -3,6 +3,8 @@ import './productsmall.css';
 import solar from '../../assets/solar.png';
 import inverter from '../../assets/inverter.png';
 import battery from '../../assets/battery.png';
+import ac from '../../assets/mideaAC.png';
+import solarlight from '../../assets/Solarlights.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -13,12 +15,12 @@ function Productsmall() {
     useEffect(() => {
         // Initialize AOS animations
         AOS.init({
-          duration: 1000, // Animation duration
-          once: true,     // Animation triggers only once when scrolling
+            duration: 1000, // Animation duration
+            once: true,     // Animation triggers only once when scrolling
         });
-      }, []);
-    
-   
+    }, []);
+
+
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -28,7 +30,7 @@ function Productsmall() {
                     }
                 });
             },
-            { threshold: 0.1 } 
+            { threshold: 0.1 }
         );
 
         imageRefs.current.forEach((img) => {
@@ -40,7 +42,7 @@ function Productsmall() {
 
     return (
         <div className='products-description-container'>
-            <div className='products-head'  data-aos="fade-up" >
+            <div className='products-head' data-aos="fade-up" >
                 We provide top-notch products and services in the solar energy sector, specializing in solar panels, inverters, and batteries. Our solutions are designed to deliver reliable, sustainable, and efficient energy systems, empowering homes and businesses with clean energy alternatives.
             </div>
             <div className='products-details'>
@@ -61,20 +63,20 @@ function Productsmall() {
                     </div>
                 </div>
                 <div className='classC' data-aos="fade-up">
-                <img
+                    <img
                         src={inverter}
                         alt="Inverter"
                         className="products-image"
                         ref={(el) => (imageRefs.current[1] = el)}
                     />
-                       </div>
+                </div>
                 <div className='classD' data-aos="fade-up">
-                    
+
                     <div className='classtexts'>
                         When it comes to inverters, we rely on the trusted expertise of globally renowned brands such as Solis, FoxESS, and Huawei. These inverters are at the forefront of modern technology, designed to maximize energy efficiency and ensure the seamless operation of solar power systems in both residential and commercial settings.
 
                         Solis inverters are known for their superior performance, reliability, and ease of use, making them a top choice for solar installations worldwide. FoxESS brings innovative features and high durability, ensuring that your solar system operates efficiently even in challenging conditions. Huawei, a global leader in technology, offers inverters with advanced features like intelligent monitoring and robust protection systems, providing unmatched efficiency and long-term stability.  </div>
-             
+
                 </div>
                 <div className='classE' data-aos="fade-up">
                     <img
@@ -86,11 +88,42 @@ function Productsmall() {
                 </div>
                 <div className='classF' data-aos="fade-up">
                     <div className='classtexts'>
-                        we go beyond solar panels and inverters to provide comprehensive energy solutions, including premium battery systems that ensure uninterrupted power and efficient energy storage. We proudly offer battery solutions from globally trusted brands such as Panasonic, Energynet, and SF Sonic, each known for their advanced technology, reliability, and exceptional performance.<br/>
+                        we go beyond solar panels and inverters to provide comprehensive energy solutions, including premium battery systems that ensure uninterrupted power and efficient energy storage. We proudly offer battery solutions from globally trusted brands such as Panasonic, Energynet, and SF Sonic, each known for their advanced technology, reliability, and exceptional performance.<br />
 
-                        Panasonic batteries are synonymous with innovation and longevity, offering outstanding energy density and stability, making them ideal for both residential and commercial applications. Energynet delivers cutting-edge battery solutions designed to maximize storage efficiency and provide reliable backup power during outages. SF Sonic, a renowned name in the energy storage sector, offers robust and durable batteries capable of handling varying energy demands with ease.<br/>
+                        Panasonic batteries are synonymous with innovation and longevity, offering outstanding energy density and stability, making them ideal for both residential and commercial applications. Energynet delivers cutting-edge battery solutions designed to maximize storage efficiency and provide reliable backup power during outages. SF Sonic, a renowned name in the energy storage sector, offers robust and durable batteries capable of handling varying energy demands with ease.<br />
 
                         With these high-quality battery solutions, DT Energy empowers homes and businesses to achieve energy independence, optimize energy usage, and reduce reliance on the grid. Our battery systems are tailored to meet diverse needs, ensuring seamless integration with solar installations for a complete and sustainable energy solution. At DT Energy, we are committed to delivering reliable, efficient, and future-ready energy storage solutions that support a greener, more resilient tomorrow.  </div>
+                </div>
+                {/* Solar AC */}
+                <div className='classG' data-aos="fade-up">
+                    <img
+                        src={ac}
+                        alt="Solar AC"
+                        className="products-image"
+                        ref={(el) => (imageRefs.current[3] = el)}
+                    />
+                </div>
+
+                <div className='classH' data-aos="fade-up">
+                    <div className='classtexts'>
+                        We offer energy-efficient solar-compatible air conditioning solutions from trusted brands like Midea. These air conditioners are designed to reduce electricity consumption while delivering powerful cooling performance. Ideal for both residential and commercial use, solar AC systems help lower energy costs and provide sustainable comfort throughout the year.
+                    </div>
+                </div>
+
+                {/* Solar Lights */}
+                <div className='classI' data-aos="fade-up">
+                    <img
+                        src={solarlight}
+                        alt="Solar Lights"
+                        className="products-image"
+                        ref={(el) => (imageRefs.current[4] = el)}
+                    />
+                </div>
+
+                <div className='classJ' data-aos="fade-up">
+                    <div className='classtexts'>
+                        Our solar lighting solutions are perfect for outdoor and indoor applications, offering reliable illumination using clean energy. These lights are designed for durability, low maintenance, and high efficiency, making them ideal for homes, streets, gardens, and commercial spaces. Solar lights help reduce electricity bills while enhancing safety and visibility.
+                    </div>
                 </div>
             </div>
         </div>
